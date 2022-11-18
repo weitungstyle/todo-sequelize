@@ -18,7 +18,27 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-  console.log('Hello world')
+  console.log('hello world')
+})
+
+app.get('/users/login', (req, res) => {
+  res.render('login')
+})
+
+app.post('/users/login', (req, res) => {
+  res.send('login')
+})
+
+app.get('/users/register', (req, res) => {
+  res.render('register')
+})
+
+app.post('/users/register', (req, res) => {
+  res.send('register')
+})
+
+app.get('/users/logout', (req, res) => {
+  res.send('logout')
 })
 
 app.listen(port, () => {
